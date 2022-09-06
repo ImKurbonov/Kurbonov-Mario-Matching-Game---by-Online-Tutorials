@@ -10,13 +10,55 @@
 <body>
     <h2>mario matching game</h2>
     <div class="box">
-        <input id="chek1" class="checkbox" type="checkbox">
-        <i></i>
-        <input id="chek1" class="checkbox" type="checkbox">
-        <i></i>
-        <input id="chek1" class="checkbox" type="checkbox">
-        <i></i>
+        <label>
+            <input id="chek1" class="checkbox" type="checkbox">
+            <i></i>
+        </label>
+        <label>
+            <input id="chek2" class="checkbox" type="checkbox">
+            <i></i>
+        </label>
+
+        <label>
+            <input id="chek3" class="checkbox" type="checkbox">
+            <i></i>
+        </label>
     </div>
     <button class="reset-btn">Reset game</button>
+    <!-- ===== JavaScript ===== -->
+    <script>
+        let check1 = document.getElementById('chek1')
+        let check2 = document.getElementById('chek2')
+        let check3 = document.getElementById('chek3')
+        let resetBtn = document.querySelector('.reset-btn')
+        check1.onclick = ()=> {
+            if(check1.checked === true) {
+                check1.disabled = 'true'
+            }
+        }
+
+        check2.onclick = ()=> {
+            if(check2.checked === true) {
+                check2.disabled = 'true'
+            }
+        }
+
+        check3.onclick = ()=> {
+            if(check3.checked === true) {
+                check3.disabled = 'true'
+            }
+        }
+
+        resetBtn.onclick = ()=> {
+            check1.disabled = false;
+            check1.checked = false
+
+            check2.disabled = false;
+            check2.checked = false
+
+            check3.disabled = false;
+            check3.checked = false
+        }
+    </script>
 </body>
 </html>
