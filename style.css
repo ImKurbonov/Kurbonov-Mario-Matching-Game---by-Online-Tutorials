@@ -16,3 +16,89 @@ body {
     padding: 0;
     width: 100%;
 }
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.box {
+    border-bottom: 2px solid #555;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    width: 600px;
+}
+
+.box label {
+    border: 2px solid #555;
+    border-bottom: none;
+    height: 33.333%;
+    position: relative;
+    user-select: none;
+    width: 100%;
+}
+
+.box label input {
+    position: relative;
+    appearance: none;
+    z-index: 10;
+}
+
+.box label i {
+    background-size: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.box label:nth-child(1) i {
+    animation: animate 0.5s steps(3) infinite;
+    background-image: url('./images/01.jpg');
+}
+
+.box label:nth-child(2) i {
+    animation: animate 0.4s steps(3) infinite;
+    background-image: url('./images/02.jpg');
+}
+
+.box label:nth-child(3) i {
+    animation: animate 0.7s steps(3) infinite;
+    background-image: url('./images/03.jpg');
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0px;
+    }
+
+    100% {
+        background-position: 600px;
+    }
+}
+
+.box label input:checked ~ i {
+    animation-play-state: paused;
+}
+
+.reset-btn {
+    background-color: #008000;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.25rem;
+    margin-top: 40px;
+    padding: 10px 25px;
+}
+
+.reset-btn:active {
+    background-color: #000;
+    color: #fff;
+    transform: scale(0.95);
+}
